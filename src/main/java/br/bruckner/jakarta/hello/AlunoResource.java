@@ -3,19 +3,18 @@ package br.bruckner.jakarta.hello;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import java.util.Arrays;
+import java.util.List;
 
-@Path("hello")
+@Path("alunos")
 public class HelloWorldResource {
 
-	@GET
+	@GET()
 	@Produces({ MediaType.APPLICATION_JSON })
-	public Hello hello(@QueryParam("name") String name) {
-		if ((name == null) || name.trim().isEmpty())  {
-			name = "world";
-		}
+	public List<Aluno> list() {
 
-		return new Hello(name);
+
+		return Arrays.asList(new Aluno());
 	}
 }
