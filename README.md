@@ -3,13 +3,9 @@
 Esta aplicação de exemplo foi gerada utilizando o Eclipse Foundation starter for Jakarta EE no link https://start.jakarta.ee/ com as configurações abaixo.
 
 * Jakarta Version EE: Jakarta EE 8
-* 
 * Jakarta EE profile: Web Profile
-* 
 * Java SE version: Java SE 17
-* 
 * Runtime: WildFly
-* 
 * Docker support: No
 
 
