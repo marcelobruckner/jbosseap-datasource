@@ -24,5 +24,19 @@ Antes de executar o comando abaixo, que vai utilizar o wildfly provido na aplica
 ./mvnw clean package wildfly:dev
 ```
 
-Once the runtime starts, you can access the project at [http://localhost:8080/jbosseap-datasource-hello](http://localhost:8080/jbosseap-datasource-hello).
+### Para testar a aplicação
 
+Para incluir aluno:
+```
+curl -X POST http://localhost:8080/datasource-hello/api/alunos \
+-H "Content-Type: application/json" \
+-d '{"nome": "João Silva"}'
+```
+
+Para buscar a lista de alunos:
+```
+curl -X GET http://localhost:8080/datasource-hello/api/alunos
+```
+
+
+*************************** EM CONSTRUÇÃO ***************************
