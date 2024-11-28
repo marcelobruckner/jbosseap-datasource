@@ -1,20 +1,31 @@
 package br.bruckner.jakarta.hello;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.inject.Inject;
+import javax.validation.Valid;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.Arrays;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("alunos")
-public class HelloWorldResource {
+public class AlunoResource {
 
-	@GET()
+	@Inject
+	private AlunoService alunoService;
+
+	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
 	public List<Aluno> list() {
-
-
-		return Arrays.asList(new Aluno());
+		return alunoService.listarTodos();
 	}
+
+	@POST
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Response novoAluno(@Valid Aluno aluno){
+		Aluno novoAluno = alunoService.salvar(aluno);
+
+		return Response.status(Response.Status.CREATED).entity(novoAluno).build();
+	}
+
 }

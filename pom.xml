@@ -33,7 +33,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>jbosseap-datasource-hello</finalName>
+		<finalName>datasource-hello</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

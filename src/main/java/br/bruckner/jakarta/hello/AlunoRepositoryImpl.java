@@ -6,7 +6,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
-public class AlunoDAOImpl implements AlunoDAO {
+public class AlunoRepositoryImpl implements AlunoRepository {
 
     @PersistenceContext
     private EntityManager em;
@@ -15,5 +15,11 @@ public class AlunoDAOImpl implements AlunoDAO {
     @Override
     public List<Aluno> listarTodos() {
         return em.createQuery("SELECT a FROM Aluno a", Aluno.class).getResultList();
+    }
+
+    @Override
+    public Aluno salvar(Aluno aluno) {
+        em.persist(aluno);
+        return aluno;
     }
 }
