@@ -1,9 +1,9 @@
 package br.bruckner.jakarta.hello;
 
-import javax.ejb.Stateless;
+import java.util.List;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import java.util.List;
 
 @RequestScoped
 public class AlunoService {
